@@ -1,0 +1,39 @@
+{
+  "name": "ie-browser-electron-app",
+  "version": "1.0.0",
+  "description": "Navegador estilo IE feito com Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Felipe Maifredo",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@electron/remote": "^2.1.2"
+  },
+  "devDependencies": {
+    "electron": "^36.5.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "felipemaifredo.iebrowser",
+    "productName": "IE Browser",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "extraFiles": [],
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    }
+  }
+}

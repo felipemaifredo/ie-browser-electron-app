@@ -1,0 +1,171 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.items_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #222222;
+}
+
+.drag_container {
+  height: 5px;
+  width: 100%;
+  -webkit-app-region: drag;
+}
+
+.ie-top-bar {
+  width: 99%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+  user-select: none;
+}
+
+.ie-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ie-left button {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: background 0.2s;
+  border-radius: 3px;
+
+}
+
+.ie-left button:hover {
+  background: #444;
+}
+
+#url {
+  width: 500px;
+  height: 15px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
+
+.ie-win-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.win-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+.win-btn:hover {
+  background: #444;
+}
+
+.win-btn.close:hover {
+  background: #e81123;
+}
+
+/* Ajusta o webview para ocupar o espaço abaixo da barra fixa */
+#browser {
+  position: fixed;
+  top: 40px;
+  /* altura da barra */
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  border: none;
+}
+
+.tabs-bar {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.tab {
+  width: 150px;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 4px 8px;
+  background: #222;
+  color: white;
+  border-radius: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  font-size: 14px;
+  position: relative;
+}
+
+.tab.active {
+  background: #555;
+  font-weight: bold;
+}
+
+.tab-title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab-close {
+  /* sem absolute */
+  background-color: red;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+
+.tab-close:hover {
+  background-color: red;
+}
+
+#new-tab-btn {
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 6px;
+  user-select: none;
+}

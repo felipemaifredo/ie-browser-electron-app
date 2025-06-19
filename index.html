@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebScout IE</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="items_container">
+        <div class="drag_container"></div>
+        <div class="ie-top-bar">
+            <div class="ie-left">
+                <button id="back">
+                    <img
+                        src="./icons/iconizer-reshot-icon-bold-arrow-right-RB7XW6DC4Zs.svg"
+                        height="20"
+                        width="20"
+                    />
+                </button>
+                <button id="forward">
+                    <img
+                        src="./icons/iconizer-reshot-icon-bold-arrow-right-RB7XW6DC4Z.svg"
+                        height="20"
+                        width="20"
+                    />
+                </button>
+                <button id="reload">⟳</button>
+                <input id="url" type="text" value="https://example.com" />
+            </div>
+            <div class="tabs-bar" id="tabs-bar">
+                <!-- Abas serão criadas dinamicamente aqui -->
+                <button id="new-tab-btn">＋</button>
+            </div>
+            <div class="ie-win-buttons">
+                <button id="min-btn" class="win-btn">🗕</button>
+                <button id="max-btn" class="win-btn">🗖</button>
+                <button id="close-btn" class="win-btn close">✕</button>
+            </div>
+        </div>
+    </div>
+    <div id="webviews-container"></div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
