@@ -29,9 +29,11 @@
     ],
     "extraFiles": [],
     "win": {
+      "icon": "icons/IE9-logo.ico",
       "target": "nsis"
     },
     "linux": {
+      "icon": "icons/IE9 logo.png",
       "target": "AppImage",
       "category": "Utility"
     }
