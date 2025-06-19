@@ -13,7 +13,7 @@ const winBtnClose = document.getElementById("close-btn")
 let tabs = []
 let activeTabId = null
 
-function createTab(url = "https://example.com") {
+function createTab(url) {
   const id = Date.now().toString()
 
   // Cria container da aba (div, não button!)
@@ -143,7 +143,7 @@ reloadBtn.addEventListener("click", () => {
 
 // Botão para nova aba
 newTabBtn.addEventListener("click", () => {
-  createTab("https://google.com")
+  createTab("https://blocks-app-sage.vercel.app/")
 })
 
 winBtnMin.addEventListener("click", () => {
@@ -159,4 +159,4 @@ winBtnClose.addEventListener("click", () => {
 })
 
 // Inicia com uma aba
-createTab("https://google.com")
+createTab("https://blocks-app-sage.vercel.app/")
