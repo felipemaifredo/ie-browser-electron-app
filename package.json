@@ -1,6 +1,6 @@
 {
   "name": "ie-browser-electron-app",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Navegador estilo IE feito com Electron",
   "main": "main.js",
   "scripts": {
@@ -19,8 +19,8 @@
     "electron-builder": "^26.0.12"
   },
   "build": {
-    "appId": "felipemaifredo.iebrowser",
-    "productName": "IE Browser",
+    "appId": "felipemaifredo.WebScout",
+    "productName": "WebScout",
     "directories": {
       "output": "dist"
     },
