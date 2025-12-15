@@ -10,8 +10,58 @@ const winBtnMin = document.getElementById("min-btn")
 const winBtnMax = document.getElementById("max-btn")
 const winBtnClose = document.getElementById("close-btn")
 
+const itemsContainer = document.querySelector(".items_container")
+
 let tabs = []
 let activeTabId = null
+let hideTimeout = null
+
+// Auto-hide da barra superior
+let isMouseOverBar = false
+
+function showTopBar() {
+  itemsContainer.classList.add("visible")
+  clearTimeout(hideTimeout)
+}
+
+function hideTopBar() {
+  if (!isMouseOverBar) {
+    itemsContainer.classList.remove("visible")
+  }
+}
+
+function scheduleHideTopBar() {
+  clearTimeout(hideTimeout)
+  hideTimeout = setTimeout(hideTopBar, 2000)
+}
+
+// Mostrar barra ao mover mouse para o topo
+document.addEventListener("mousemove", (e) => {
+  if (e.clientY <= 3) {
+    showTopBar()
+  } else if (e.clientY > 55 && !isMouseOverBar) {
+    scheduleHideTopBar()
+  }
+})
+
+// Manter visível quando mouse está sobre a barra
+itemsContainer.addEventListener("mouseenter", () => {
+  isMouseOverBar = true
+  showTopBar()
+})
+
+itemsContainer.addEventListener("mouseleave", () => {
+  isMouseOverBar = false
+  scheduleHideTopBar()
+})
+
+// Mostrar inicialmente visível
+itemsContainer.classList.add("visible")
+
+// Esconder após 3 segundos
+setTimeout(() => {
+  scheduleHideTopBar()
+}, 3000)
 
 function createTab(url) {
   const id = Date.now().toString()
@@ -52,7 +102,7 @@ function createTab(url) {
   webview.dataset.id = id
   webview.style.width = "100%"
   webview.style.height = "100dvh"
-  webview.style.marginTop = "40px"
+  webview.style.marginTop = "8px"
   webview.style.display = "none" // começa escondido
   webviewsContainer.appendChild(webview)
 
